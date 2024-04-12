@@ -1,0 +1,184 @@
+
+:root{
+    --taskbar-bg:#eeeeee;
+    --search-box:white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body video{
+    width: 100%;
+    height: 100vh;    
+    /* position: absolute; */
+}
+body{
+    background: radial-gradient(white, skyblue) no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: #1a1a1a;
+}
+
+.startmenu {
+    position: absolute;
+    bottom: -655px;
+    left: 450px;
+    transition: all .15s ease-in;
+    
+    & .box{
+        width: 40rem;
+        height: 42rem;
+        background-color: rgba(255, 255, 255, 0.749);
+        backdrop-filter:blur(5px);
+        border-radius: 5px;
+        box-shadow: 0 0 2px 1px grey;
+        padding: 30px 50px;
+        box-sizing: border-box;
+        & .search{
+            width: 100%;
+            height: 30px;
+            border-radius: 999px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 2px 1px grey;
+        }
+        & .category,.apps,.recommended,.title,.user{
+            margin-top: 30px;
+        }
+        & .category,.recommended,.title,.user{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & button{
+                padding: 2px 5px;
+                border-radius: 4px;
+                background-color: rgba(255, 255, 255, 0.507);
+                border: none;
+            }
+        }
+
+        & .apps{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            /* grid-template-rows: repeat(2,1fr); */
+            gap: 5px;
+
+
+            & .app{
+                
+                text-wrap: nowrap;
+                font-size: 11px;
+                font-weight: 500;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 3px 0;
+                /* justify-content: center; */
+                width: 90px;
+                height: 85px;
+                border-radius: 3px;
+                
+            }
+
+            & .app:hover {
+                background-color: rgba(255, 255, 255, 0.411);
+            }
+        
+        }
+
+
+
+
+
+
+        & .user{
+            & .dp{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                & .image{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+                    background-color: red;
+                }
+            }
+        }
+    }
+
+    & >img{
+        border-radius: 5px;
+        box-shadow: 0 0 2px 1px grey;
+    }
+
+}
+
+.taskbar{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--taskbar-bg);
+    /* backdrop-filter: blur(10px); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .left{
+        margin-left: 20px;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        & p:last-child{
+            font-weight: 100;
+            font-size: 13px;
+        }
+    }
+    & .center{
+        display: flex;
+        align-items: center;
+
+        & img{
+            padding: 6px;
+            
+            border-radius: 3px;
+            transition:all .1s ease-in;
+
+            
+        }
+        & img:hover {
+            background-color: rgb(250, 250, 250);
+        }
+
+        & .search{
+            background-color: var(--search-box);
+            border-radius: 99px;
+            padding: 5px 10px;
+            width: 80px;
+            
+            & input{
+                background-color: var(--search-box);
+                border: none;
+                outline: none;
+                width: 50px;
+                font-size: 14px;
+                border-radius: 99px;
+            }
+        }
+    }   
+
+    & .right{
+        margin-right: 15px;
+        display: flex;
+        gap: 10px;
+    }
+}
+
